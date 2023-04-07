@@ -39,7 +39,12 @@ const LoginScreen = () => {
             LOGIN
           </TitleLogin>
           <Input title="USUÁRIO" margin="32px 0px 0px" onChange={handleUserName} />
-          <Input title="SENHA" margin="32px 0px 0px" onChange={handleUserPassword} />
+          <Input
+            type="password"
+            title="SENHA"
+            margin="32px 0px 0px"
+            onChange={handleUserPassword}
+          />
 
           <Button type="primary" margin="64px 0px 16px 0px" onClick={handleLogin}>
             ENTRAR
