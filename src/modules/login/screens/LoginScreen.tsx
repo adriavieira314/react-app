@@ -28,10 +28,10 @@ const LoginScreen = () => {
   };
 
   const handleLogin = () => {
-    // postRequest('http://localhost:8080/auth', {
-    //   email: email,
-    //   password: password,
-    // });
+    postRequest('http://localhost:8080/auth', {
+      email: email,
+      password: password,
+    });
 
     setAccessToken('mudo o token');
   };
