@@ -12,11 +12,13 @@ function App() {
   const { contextHolder } = useNotification();
   const { user, setUser } = useGlobalContext();
 
-  const routes: RouteObject[] = [...loginRoutes, ...firstScreenRoutes];
-  const routesLoggedIn: RouteObject[] = [...productsScreenRoutes].map((route) => ({
-    ...route,
-    loader: () => verifyLoggedIn(setUser, user),
-  }));
+  const routes: RouteObject[] = [...loginRoutes];
+  const routesLoggedIn: RouteObject[] = [...firstScreenRoutes, ...productsScreenRoutes].map(
+    (route) => ({
+      ...route,
+      loader: () => verifyLoggedIn(setUser, user),
+    }),
+  );
 
   const router: RemixRouter = createBrowserRouter([...routes, ...routesLoggedIn]);
 
