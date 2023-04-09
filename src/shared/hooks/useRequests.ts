@@ -27,6 +27,7 @@ export const useRequests = () => {
     const returnData = await connectionAPIPost<T>(url, body)
       .then((result) => {
         setNotification('Entrando...', 'success', '');
+        console.log(result);
 
         return result;
       })
